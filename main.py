@@ -89,6 +89,9 @@ class SystrayLauncher(object):
         self.openScripts3Action = QtWidgets.QAction("脚本 3D-Coat", None, triggered=self.openScripts3)
         menu.addAction(self.openScripts3Action)
 
+        self.openScripts4Action = QtWidgets.QAction("Maya按键修改", None, triggered=self.openScripts4)
+        menu.addAction(self.openScripts4Action)
+
         menu.addSeparator()
 
         self.openDirFxAction = QtWidgets.QAction("目录 特效", None, triggered=self.openDirFx)
@@ -202,6 +205,11 @@ class SystrayLauncher(object):
     def openScripts3(self):
         subprocess.Popen(
             ["/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron /Users/Midstream/3D-CoatV48/Scripts"],
+            shell=True)
+
+    def openScripts4(self):
+        subprocess.Popen(
+            ["/Users/Midstream/Documents/Soft_Cfgs/MacUtils/KeyModifier"],
             shell=True)
 
     def openDirFx(self):
